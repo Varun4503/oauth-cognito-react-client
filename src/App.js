@@ -34,7 +34,7 @@ function App() {
     // Both are JWTs, but only access_token should be sent to backend (best practice)
     // id_token works here because Spring only checks signature, not token type
 
-    localStorage.setItem("token", data.id_token);
+    localStorage.setItem("token", data.id_token); // Storing Tokens in localStorage is vulnerable to XSS attack
   };
 
   const callAPI = async () => {
